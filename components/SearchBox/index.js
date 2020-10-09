@@ -4,7 +4,6 @@ class SearchBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: props.value};
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -14,9 +13,7 @@ class SearchBox extends React.Component {
   }
 
   handleSubmit(event) {
-    //if (this.state.value != ""){
       Router.push(`/items?search=${this.state.value}`);
-    //}
     event.preventDefault();
   }
 
@@ -39,7 +36,6 @@ class SearchBox extends React.Component {
 	</div>
   	) 
   }
-
 }
 
 export default SearchBox

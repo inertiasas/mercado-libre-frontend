@@ -17,7 +17,6 @@ class CategoriesMenu extends React.Component {
     </div>
   	) 
   }
-
 }
 
 export default CategoriesMenu

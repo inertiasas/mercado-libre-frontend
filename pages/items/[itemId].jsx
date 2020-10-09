@@ -1,4 +1,3 @@
-// posts will be populated at build time by getStaticProps()
 import Head from 'next/head'
 import SearchBox from '../../components/SearchBox/index'
 import CategoriesMenu from '../../components/CategoriesMenu/index'
@@ -19,16 +18,10 @@ function Item({ data }) {
   )
 }
 
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries. See the "Technical details" section.
 export async function getServerSideProps(context) {
-
   const itemId = context.params.itemId;
   const res = await fetch(`http://localhost:3000/api/items/${itemId}`)
   const data = await res.json();
- // const data = {categories:"una"}
-
   return { props: { data } };
 }
 

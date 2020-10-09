@@ -4,11 +4,8 @@ export default async (req, res) => {
   } = req
 
   var qvar = q;
-  console.log(typeof qvar)
-
   const resApi = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${qvar}`);
   const data = await resApi.json();
-  //console.log(`prueba: ${JSON.stringify(data)}`)
   const resCurr = await fetch('https://api.mercadolibre.com/currencies');
   const currencies =  await resCurr.json();
   const results = data.results;

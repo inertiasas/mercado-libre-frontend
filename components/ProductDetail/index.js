@@ -62,7 +62,6 @@ class ProductDetail extends React.Component {
      </div>
   	) 
   }
-
 }
 
 export default ProductDetail
