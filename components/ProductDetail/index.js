@@ -24,30 +24,34 @@ class ProductDetail extends React.Component {
     <div>
 	    <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-7">
-          <img src={this.props.item.picture} alt="public/ML Image"/>
-        </div>
-        <div class="col-md-3">
-          <div>{this.props.item.condition}</div>
-          <div>{this.props.item.title}</div>
-          <div>
-            {this.props.item.price.currency} {formatMoney(this.props.item.price.amount, this.props.item.price.decimals, ",", ".")}
+          <div id="prd-detail-cntnr" class="col-md-10">
+            <div id="prd-detail-cntnr-sub">
+              <div id="img-prd-detail-cntnr">
+                <img src={this.props.item.picture} alt="public/ML Image"/>
+              </div>      
+              <div id="desc-prd-detail-cntnr">
+                <div id="title-desc-prd-detail-cntnr">
+                  Descripción del producto
+                </div>
+                <div id="text-desc-prd-detail-cntnr">
+                  {this.props.item.description}
+                </div>
+              </div>
+            </div>
+            <div id="info-prd-detail-cntnr">
+              <div id="cond-prd-detail-cntnr">{this.props.item.condition}</div>
+              <div id="title-prd-detail-cntnr">{this.props.item.title}</div>
+              <div id="price-prd-detail-cntnr">
+                {this.props.item.price.currency} {formatMoney(this.props.item.price.amount, this.props.item.price.decimals, ",", ".")}
+              </div>
+              <div id="buy-btn-cntnr">
+                <button id="buy-btn" type="submit">Comprar</button>
+              </div>
+            </div>
           </div>
-          <div>
-            <button type="submit">Comprar</button>
-          </div>
-        </div>
         <div class="col-md-1"></div>
 	    </div>
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-7">
-          <div>Descripción del Producto</div>
-          <div>{this.props.item.description}</div>
-        </div>
-        <div class="col-md-4"></div>
-      </div>
-      </div>
+     </div>
   	) 
   }
 
