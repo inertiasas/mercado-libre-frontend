@@ -14,6 +14,14 @@ function formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
   }
 };
 
+function getDecimals(value,numDec){
+  var decimal = value % 1;
+  var decimalAmp = decimal * (10**numDec);
+  var decimalInt = parseInt(decimalAmp, 10);
+  var decimalText = ("0".repeat(numDec - 1) + decimalInt).slice(-numDec);
+  return decimalText;
+}
+
 class ProductDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +50,7 @@ class ProductDetail extends React.Component {
               <div id="cond-prd-detail-cntnr">{this.props.item.condition}</div>
               <div id="title-prd-detail-cntnr">{this.props.item.title}</div>
               <div id="price-prd-detail-cntnr">
-                {this.props.item.price.currency} {formatMoney(this.props.item.price.amount, 0, ",", ".")}<span class="decimal">00</span>
+                {this.props.item.price.currency} {formatMoney(parseInt(this.props.item.price.amount, 10), 0, ",", ".")}<span class="decimal">{getDecimals(this.props.item.price.amount,this.props.item.price.decimals)}</span>
               </div>
               <div id="buy-btn-cntnr">
                 <button id="buy-btn" type="submit">Comprar</button>
