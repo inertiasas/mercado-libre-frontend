@@ -149,6 +149,7 @@ div.ctgr-item:last-child::after {
   padding: 0;
   overflow: hidden;
   background-color: white;
+  min-width: 1000px;
 }
 
 #prd-detail-cntnr-sub{
@@ -192,8 +193,10 @@ div.ctgr-item:last-child::after {
 
 #info-prd-detail-cntnr{
   float: left;
-  width: calc(100% - 790px);
+  width: calc(100% - 783px);
+  //min-width: 100px;
   padding: 32px 32px 32px 0px;
+  //background-color: yellow;
 }
 
 #cond-prd-detail-cntnr{
