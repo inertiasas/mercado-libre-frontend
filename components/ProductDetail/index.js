@@ -42,7 +42,7 @@ class ProductDetail extends React.Component {
               <div id="cond-prd-detail-cntnr">{this.props.item.condition}</div>
               <div id="title-prd-detail-cntnr">{this.props.item.title}</div>
               <div id="price-prd-detail-cntnr">
-                {this.props.item.price.currency} {formatMoney(this.props.item.price.amount, this.props.item.price.decimals, ",", ".")}
+                {this.props.item.price.currency} {formatMoney(this.props.item.price.amount, 0, ",", ".")}<span class="decimal">00</span>
               </div>
               <div id="buy-btn-cntnr">
                 <button id="buy-btn" type="submit">Comprar</button>

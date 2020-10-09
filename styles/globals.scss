@@ -234,3 +234,9 @@ div.ctgr-item:last-child::after {
   width: 100%;
   border-radius: 4px;
 }
+
+.decimal {
+  position:relative;
+  top: -0.3em;
+  font-size: 0.7em;
+}
